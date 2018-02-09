@@ -8,7 +8,7 @@ redirect_from:
 
 Quill在设计时就考虑到了定制化和扩展。这是通过实现一个小的编辑器核心来实现的，这个编辑器核心是由一个细粒度的，定义良好的[API](/docs/api/)集合组成的，编辑器的核心由[模块](/docs/modules)扩充，您也可以使用的相同的[APIs](/docs/api/)自己实现模块。
 
-通常情况下，大多数定制在[配置](#configurations/)中处理，用户界面由[主题](#themes)和CSS配置，功能由[模块](#modules)配置，编辑器的内容通过[Parchment](#content-and-formatting)处理。
+通常情况下，大多数定制在[配置](#configurations/)中处理，用户界面由[主题](#themes)和CSS配置，功能由[模块](#modules)配置，编辑器的内容通过[Parchment](#content-and-formatting)处理。
 
 
 ### 配置
@@ -22,7 +22,7 @@ Quill支持Code Over Configuration™，但是对于非常常见的需求，特�
 
 Quill官方支持一个标准的工具栏主题[Snow](/docs/themes/#snow)和一个浮动的工具提示主题[Bubble](/docs/themes/#bubble)。由于Quill不像许多传统编辑器那样被限制在iframe中，因此只需使用现有的主题之一，就可以使用CSS在主题上进行许多可视的修改。
 
-如果你想大幅改变UI交互，你可以省略主题配置选项，这将给你一个没有style的Quill编辑器。您仍然需要包含一个最小的样式表，例如，确保空格在所有浏览器中呈现，并且有序列表被适当编号。
+如果你想大幅改变UI交互，你可以省略主题配置选项，这将给你一个没有样式的Quill编辑器。您仍然需要包含一个最小的样式表，例如，确保空格在所有浏览器中呈现，并且有序列表被适当编号。
 
 ```html
 <link rel="stylesheet" href="https://cdn.quilljs.com/{{site.version}}/quill.core.css">
@@ -48,7 +48,7 @@ var quill = new Quill('#editor', {
 });
 ```
 
-需要包含一些模块（[Clipboard](/docs/modules/clipboard/)，[Keyboard](/docs/modules/keyboard/)和[History](/docs/modules/history/)）作为核心功能，具体取决于它们提供的API。例如，即使undo和redo是基本的，预期的编辑器功能，本地浏览器的行为处理也是不一致和不可预测的。History模块通过实现自己的撤销管理器并将undo（）和redo（）暴露为API来填补这个空白。
+需要包含一些模块（[Clipboard](/docs/modules/clipboard/)，[Keyboard](/docs/modules/keyboard/)和[History](/docs/modules/history/)）作为核心功能，具体取决于它们提供的API。例如，即使undo和redo是基本的，预期的编辑器功能，本地浏览器的行为处理也是不一致和不可预测的。History模块通过实现自己的撤销管理器并将undo（）和redo（）暴露为API来填补这个空白。
 
 尽管如此，坚持Quill模块化设计，仍然可以通过实现自己的撤消管理器来取代历史模块，从而彻底改变撤消和重做的方式，或者任何其他的核心功能。只要你实现相同的API接口，Quill会很乐意使用你的替换模块。通过继承现有的模块，并覆盖你想要改变的方法，这很容易完成。看看[模块](/docs/modules/)文档中的覆盖核心[Clipboard](/docs/modules/clipboard/)模块的一个非常简单的例子。
 
@@ -107,7 +107,7 @@ Quill.register(FontAttributor, true);
 
 ```js
 var Bold = Quill.import('formats/bold');
-Bold.tagName = 'B';   // Quill 默认使用 <strong> 标签
+Bold.tagName = 'B';   // Quill 默认使用 <strong> 标签
 Quill.register(Bold, true);
 
 // 正常初始化Quill
