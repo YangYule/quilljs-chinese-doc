@@ -22,7 +22,7 @@ Quill使用Webpack构建，本指南主要针对[Webpack](https://webpack.js.org
 
 ### 入口
 
-Quill被编译为了`quill.js` and `quill.core.js`。用于构建[quill.js](https://github.com/quilljs/quill/blob/master/quill.js)和[core.js](https://github.com/quilljs/quill/blob/master/core.js)的入口文件的目的是导入和注册必要的依赖关系。您可能希望在应用程序中使用类似的入口点，其中只包含您使用的格式，模块或主题。
+Quill被编译为了`quill.js`和`quill.core.js`。用于构建[quill.js](https://github.com/quilljs/quill/blob/master/quill.js)和[core.js](https://github.com/quilljs/quill/blob/master/core.js)的入口文件的目的是导入和注册必要的依赖关系。您可能希望在应用程序中使用类似的入口点，其中只包含您使用的格式，模块或主题。
 
 ```js
 import Quill from 'quill/core';
@@ -50,7 +50,7 @@ export default Quill;
 
 ### 样式表
 
-从源代码编译CSS并不能获取多少好处，因为CSS很容易被覆盖，但是在你的CSS文件中用[`css-loader`](https://www.npmjs.com/package/css-loader)的波浪线前缀包含Quill的样式或许是有用的。
+从源代码编译CSS并不能获取多少好处，因为CSS很容易被覆盖，但是在你的CSS文件中用[`css-loader`](https://www.npmjs.com/package/css-loader)的波浪线前缀包含Quill的样式或许是有用的。
 
 ```css
 @import "~quill/dist/quill.core.css"
